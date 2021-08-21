@@ -13,7 +13,7 @@ ReactDOM.render(
     <Theme>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/books" component={Book} />
+        <Route path="/book/:bookId" component={Book} />
       </Switch>
     </Theme>
   </BrowserRouter>,

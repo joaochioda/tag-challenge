@@ -8,6 +8,7 @@ export const EmptyDiv = styled.div`
 `;
 
 export const Container = styled.div`
+  cursor: pointer;
   position: relative;
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;

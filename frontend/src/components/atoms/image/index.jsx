@@ -12,8 +12,8 @@ const Image = ({ src, alt, width = 64, height = 64 }) => {
 export default Image;
 
 Image.propTypes = {
-    src: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
+    src: PropTypes.string,
+    alt: PropTypes.string,
     width: PropTypes.number,
     height: PropTypes.number,
 };

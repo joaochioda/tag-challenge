@@ -21,8 +21,8 @@ const useFecthPaginate = (url, page, tagData, booksPerTime) => {
             try {
                 setLoading(true);
                 const ids = getIds();
-                const { data: { data: { books } } } = await api.get(`${url}/${ids}`);
-                setDataApi((oldState) => [...oldState, ...books]);
+                const { data } = await api.get(`${url}/${ids}`);
+                setDataApi((oldState) => [...oldState, ...data]);
 
             } catch (error) {
                 setError(error);

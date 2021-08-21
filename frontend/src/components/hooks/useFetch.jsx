@@ -12,12 +12,12 @@ const useFetch = (url, order) => {
             const fetchData = async () => {
                 try {
                     setLoading(true);
-                    const { data: { jsonBooks: { results } } } = await api.get(url);
+                    const { data } = await api.get(url);
                     if (order) {
-                        const orderedResults = orderEdition(results);
+                        const orderedResults = orderEdition(data);
                         setDataApi(orderedResults);
                     } else {
-                        setDataApi(results);
+                        setDataApi(data);
                     }
 
                 } catch (error) {
@@ -30,7 +30,7 @@ const useFetch = (url, order) => {
 
             fetchData();
         }
-    }, []);
+    }, [url]);
 
     return { error, dataApi, loading };
 }

@@ -3,13 +3,29 @@ import { ThemeProvider } from "styled-components";
 import PropTypes from "prop-types";
 
 const theme = {
+  text: {
+    title: {
+      fontSize: "54px",
+      color: "#36364C",
+      fontWeight: "700",
+    },
+
+    paragraph: {
+      fontSize: "37px",
+      color: "#E9C9C3",
+      fontWeight: "500",
+    },
+
+    span: {
+      fontSize: "12px",
+      color: "#E9C9C3",
+      fontWeight: "300",
+    },
+  },
   colors: {
     brown: "#B77763",
     lightBrown: "#E9C9C3",
     darkBlue: "#36364C",
-  },
-  fonts: {
-    primary: "Montserrat, sans-serif",
   },
   screen: {
     ultraLarge: "1700px",
@@ -17,14 +33,6 @@ const theme = {
     desktop: "1024px",
     tablet: "768px",
     mobile: "480px",
-  },
-  fontSizes: {
-    size51: "51px",
-    size37: "37px",
-    size23: "23px",
-  },
-  lineHeight: {
-    size20: "20px",
   },
 };
 

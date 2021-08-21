@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Container } from './style.js';
 import CardBook from '../../molecules/bookCard';
 
-const BookList = ({ setPage, tagData, tagLoading, page, goodReadsLoading, booksPerTime, goodReadData }) => {
+const BookList = ({ setPage, tagData, tagLoading, page, goodReadsLoading, booksPerTime, goodReadData, onClick }) => {
     const observer = useRef();
 
     function findRate(isbn) {
@@ -17,7 +17,6 @@ const BookList = ({ setPage, tagData, tagLoading, page, goodReadsLoading, booksP
         }
         observer.current = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting && !tagLoading && !goodReadsLoading) {
-                console.log('interscicou');
                 setPage((previousPage) => previousPage + 1);
             }
         }, [])
@@ -44,7 +43,7 @@ const BookList = ({ setPage, tagData, tagLoading, page, goodReadsLoading, booksP
                         key={book.objectId}
                         ref={lastBookRef}
                         style={{ justifySelf: 'center' }}
-
+                        onClick={() => onClick(book.objectId)}
                     >
                         {cardBook()}
                     </div>
@@ -52,6 +51,7 @@ const BookList = ({ setPage, tagData, tagLoading, page, goodReadsLoading, booksP
                     return <div
                         key={book.objectId}
                         style={{ justifySelf: 'center' }}
+                        onClick={() => onClick(book.objectId)}
                     >
                         {cardBook()}
                     </div>
@@ -70,5 +70,6 @@ BookList.propTypes = {
     page: PropTypes.number.isRequired,
     goodReadsLoading: PropTypes.bool.isRequired,
     booksPerTime: PropTypes.number.isRequired,
-    goodReadData: PropTypes.array.isRequired
+    goodReadData: PropTypes.array.isRequired,
+    onClick: PropTypes.func.isRequired
 };
