@@ -4,11 +4,24 @@ import PropTypes from "prop-types";
 
 const theme = {
   colors: {
-    black: "#000000",
+    brown: "#B77763",
+    lightBrown: "#E9C9C3",
+    darkBlue: "#36364C",
   },
-  fonts: ["Nunito", "RoboLatoto"],
+  fonts: {
+    primary: "Montserrat, sans-serif",
+  },
+  screen: {
+    ultraLarge: "1700px",
+    largeDesktop: "1366px",
+    desktop: "1024px",
+    tablet: "768px",
+    mobile: "480px",
+  },
   fontSizes: {
-    size12: "12px",
+    size51: "51px",
+    size37: "37px",
+    size23: "23px",
   },
   lineHeight: {
     size20: "20px",

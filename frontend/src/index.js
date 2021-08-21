@@ -6,16 +6,16 @@ import Home from "../src/components/templates/Home";
 import Theme from "./styles/theme";
 import { Route, BrowserRouter, Switch } from "react-router-dom";
 
+import "../src/styles/global.css";
+
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Theme>
-        <Switch>
-          <Route path="/" exact component={Book} />
-          <Route path="/books" component={Home} />
-        </Switch>
-      </Theme>
-    </BrowserRouter>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Theme>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/books" component={Book} />
+      </Switch>
+    </Theme>
+  </BrowserRouter>,
   document.getElementById("root")
 );
