@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-image: url("../../../assets/back1@300x.png");
-  padding-top: 150px;
+  padding: 150px 10px 50px 30px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -27,6 +26,8 @@ export const RightSide = styled.div`
   flex-direction: column;
   padding-left: 30px;
   gap: 10px;
+  @media (max-width: ${(props) => props.theme.screen.desktop}) {
+  }
   @media (max-width: ${(props) => props.theme.screen.tablet}) {
     padding-left: 0px;
     padding-top: 20px;

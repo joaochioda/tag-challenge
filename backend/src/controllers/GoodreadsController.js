@@ -3,6 +3,7 @@ const axios = require("axios");
 module.exports = {
   async getByIsbns(req, res) {
     const { ids } = req.params;
+    if (!ids) return res.status(404).send({ error: "Faltando ids" });
     try {
       const {
         data: { books },

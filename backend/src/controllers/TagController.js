@@ -15,7 +15,11 @@ module.exports = {
     const { id } = req.params;
     try {
       const book = jsonBooks.results.find((book) => book.objectId === id);
-      return res.status(200).json(book);
+      if (book) {
+        return res.status(200).json(book);
+      } else {
+        return res.status(404).json({ message: "O livro não foi encontrado" });
+      }
     } catch (ex) {
       return res
         .status(500)

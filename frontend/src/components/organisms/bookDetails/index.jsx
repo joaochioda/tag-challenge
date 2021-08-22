@@ -15,6 +15,11 @@ const BookDetail = ({ name, url, edition, curator, pages, ratingsTag, ratingsGoo
         return `${editionData[0]}/${editionData[2]}`
     }
 
+    const textRateGoodRead = () => {
+        if (!ratingsGoodRead) return `0 avaliações GoodRead`
+        if (ratingsGoodRead > 0) return `${ratingsGoodRead.toString()} avaliações GoodRead`
+    }
+
     return (
         <Container>
             <Back handleOnCLick={handleOnCLick} />
@@ -25,7 +30,7 @@ const BookDetail = ({ name, url, edition, curator, pages, ratingsTag, ratingsGoo
                 <Text text={curator} type={'paragraph'} />
                 <Text text={`${pages?.toString()} páginas`} type={'paragraph'} />
                 <Text text={`${ratingsTag?.toString()} avaliações TAG`} type={'paragraph'} />
-                <Text text={`${ratingsGoodRead?.toString()} avaliações GOODREAD`} type={'paragraph'} />
+                <Text text={textRateGoodRead()} type={'paragraph'} />
             </RightSide>
         </Container>
     )

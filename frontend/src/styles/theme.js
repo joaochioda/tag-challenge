@@ -5,19 +5,28 @@ import PropTypes from "prop-types";
 const theme = {
   text: {
     title: {
-      fontSize: "54px",
+      fontSize: {
+        default: "54px",
+        minimum: "32px",
+      },
       color: "#36364C",
       fontWeight: "700",
     },
 
     paragraph: {
-      fontSize: "37px",
+      fontSize: {
+        default: "37px",
+        minimum: "22px",
+      },
       color: "#E9C9C3",
       fontWeight: "500",
     },
 
     span: {
-      fontSize: "12px",
+      fontSize: {
+        default: "12px",
+        minimum: "12px",
+      },
       color: "#E9C9C3",
       fontWeight: "300",
     },

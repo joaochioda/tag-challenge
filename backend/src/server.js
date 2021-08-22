@@ -15,3 +15,5 @@ app.use(routes);
 app.listen(port);
 
 console.log(`Server runing on localhost:${port}`);
+
+module.exports = app;
