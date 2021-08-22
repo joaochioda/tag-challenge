@@ -7,8 +7,15 @@ const BookList = ({ setPage, tagData, tagLoading, page, goodReadsLoading, booksP
     const observer = useRef();
 
     function findRate(isbn) {
-        const itemFound = goodReadData.find(item => item.isbn13 === isbn);
-        return itemFound ? parseFloat(itemFound.average_rating) : 0
+
+        const findByIsbn13 = goodReadData.find(item => item.isbn13 == isbn);
+        if (!findByIsbn13) {
+            const findByIsbn = goodReadData.find(item => item.isbn == isbn);
+            if (!findByIsbn) {
+                return 0;
+            } return parseFloat(findByIsbn.average_rating);
+        }
+        return parseFloat(findByIsbn13.average_rating)
     }
 
     const lastBookRef = useCallback(node => {
@@ -44,6 +51,7 @@ const BookList = ({ setPage, tagData, tagLoading, page, goodReadsLoading, booksP
                         ref={lastBookRef}
                         style={{ justifySelf: 'center' }}
                         onClick={() => onClick(book.objectId)}
+                        data-testid="book"
                     >
                         {cardBook()}
                     </div>
@@ -52,6 +60,7 @@ const BookList = ({ setPage, tagData, tagLoading, page, goodReadsLoading, booksP
                         key={book.objectId}
                         style={{ justifySelf: 'center' }}
                         onClick={() => onClick(book.objectId)}
+                        data-testid="book"
                     >
                         {cardBook()}
                     </div>

@@ -8,7 +8,7 @@ const useFecthPaginate = (url, page, tagData, booksPerTime) => {
 
     function getIds() {
         const start = (page - 1) * booksPerTime;
-        const end = (page * booksPerTime) - 1 > tagData.length ? tagData.length : (page * booksPerTime) - 1;
+        const end = (page * booksPerTime) > tagData.length ? tagData.length : (page * booksPerTime);
         if (start === end) {
             return tagData[start - 1].isbn;
         } else {
