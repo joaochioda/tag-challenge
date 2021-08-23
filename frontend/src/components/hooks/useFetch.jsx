@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { api } from '../../services/api';
-import orderEdition from '../utils/orderEdition';
+import orderEdition from '../../utils/orderEdition';
 
 const useFetch = (url, order) => {
     const [dataApi, setDataApi] = useState([]);
