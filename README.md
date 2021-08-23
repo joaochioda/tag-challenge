@@ -50,7 +50,7 @@ From your command line:
 ```bash
 # Clone this repository
 $ git clone https://github.com/joaochioda/tag-challenge
-$cd tag-challenge
+$ cd tag-challenge
 ````
 
 Run backend
